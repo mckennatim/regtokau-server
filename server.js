@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-var app = require('./node-token-auth/app');
-var cfg = require('./node-token-auth/cfg').cfg();
+var app = require('./app');
+var cfg = require('./cfg').cfg();
 
 
 app.set('port', process.env.PORT || cfg.port);

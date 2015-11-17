@@ -7,7 +7,7 @@ var fs = require('fs');
 var cfg = require('../cfg').cfg();
 var secret = cfg.secret
 
-var httpLoc = 'http://localhost:' + cfg.port + '/api/'
+var httpLoc = cfg.url+':' + cfg.port + '/api/'
 
 describe('superagent:', function() {
 	var agent = superagent.agent();
@@ -32,7 +32,7 @@ describe('superagent:', function() {
 		/*-----------------------------------authentication-----------------------------------------------*/
 	describe('signup', function() {
 		//before(loginUser(agent));    
-		it('gets a [available] for user tim ', function(done) {
+		it('gets a [available] for user tim2 ', function(done) {
 			agent
 				.get(httpLoc + 'isUser/' + ureg)
 				.end(function(e, res) {
@@ -62,7 +62,7 @@ describe('superagent:', function() {
 	})
 	describe('authenticate', function() {
 		it('reads apikey from file, expects it to be 24 characters' ,function(done){
-			fs.readFile('../node-token-auth/key', 'utf8', function(err, data) {
+			fs.readFile('./test/key', 'utf8', function(err, data) {
 				if (err) {
 					return console.log(err);
 				}

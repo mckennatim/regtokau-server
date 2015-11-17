@@ -32,13 +32,13 @@ var expressSession = require('express-session');
 app.use(passport.initialize());
 
 // Initialize Passport
-var initPassport = require('./reg/init');
+var initPassport = require('./modules/regtokau/init');
 initPassport(passport);
 
-var routes = require('./reg/routes')(passport);
-app.use('/', routes);
-var myroutes = require('../routes')(passport);
-app.use('/', myroutes);
+var regtokau = require('./modules/regtokau/routes')(passport);
+app.use('/', regtokau);
+var blank = require('./modules/blank/routes')(passport);
+app.use('/', blank);
 
 // development error handler
 // will print stacktrace
@@ -51,7 +51,4 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
-
-
 module.exports = app;

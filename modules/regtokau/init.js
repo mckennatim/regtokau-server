@@ -1,11 +1,11 @@
 var LocalStrategy = require('passport-localapikey').Strategy;
 var BearerStrategy = require('passport-http-bearer').Strategy;
 var jwt = require('jwt-simple');
-var cfg = require('../cfg').cfg();
+var cfg = require('../../cfg').cfg();
 var secret = cfg.secret;
 var cons = require('tracer').console();
 
-var User = require('./user');
+var User = require('../../db/user');
 // User.find().toArray(function(err, items) {
 // 	console.log(err);
 // 	console.log(items)

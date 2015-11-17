@@ -1,13 +1,13 @@
-var nodmod = './node-token-auth/node_modules/'
-var express = require(nodmod+'express');
+//var nodmod = './node-token-auth/node_modules/'
+var express = require('express');
 var router = express.Router();
-var _ = require(nodmod+'underscore');
-var User = require('./node-token-auth/reg/user');
-var dbase = require('./node-token-auth/cfg').db().db;
-var cons = require(nodmod+ 'tracer').console();
+var _ = require('underscore');
+var User = require('../../db/user');
+var dbase = require('../../cfg').db().db;
+var cons = require('tracer').console();
 var db;
-var Server = require(nodmod+'mongodb').Server
-var MongoClient = require(nodmod+'mongodb').MongoClient
+var Server = require('mongodb').Server
+var MongoClient = require('mongodb').MongoClient
 var mongoClient = new MongoClient(new Server('localhost', 27017));
 mongoClient.open(function(err, mongoClient) {db = mongoClient.db(dbase);})
 

@@ -2,20 +2,20 @@ var express = require('express');
 var router = express.Router();
 var jwt = require('jwt-simple');
 var fs = require('fs');
-var User = require('./user');
+var User = require('../../db/user');
 var cons = require('tracer').console();
-var secret = require('../cfg').cfg().secret
+var secret = require('../../cfg').cfg().secret
 
 /*-----------------------------setup mailer-----------------------------------*/
 var nodemailer = require('nodemailer')
-var gmailCred =require('../cfg').gmail();
+var gmailCred =require('../../cfg').gmail();
 var smtpTransport = nodemailer.createTransport("SMTP",gmailCred);  
 console.log(smtpTransport.options.service)
 
 var blankUser= {name: '', email: '', lists:[], role:'', timestamp: 1, apikey: ''};
 
 emailKey =function(items, callback){
-	fs.writeFile("node-token-auth/key", items.apikey, function(err){
+	fs.writeFile("./test/key", items.apikey, function(err){
 	    if(err) {
 	        cons.log(err);
 	    } else {
