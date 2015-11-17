@@ -1,10 +1,12 @@
 var secret = 'some phrase to be used to encode token';
+var url = 'http://localhost'
 var port = 3000;
 var db= 'test';
 
 exports.cfg = function(){
 	return{
 		secret:secret,
+		url:url,
 		port: port
 	}
 }
