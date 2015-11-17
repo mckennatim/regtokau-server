@@ -1,14 +1,3 @@
-second modification by modified byy test
-#heroctl server
-This is the server for heated roof systems web control program
-##weather apis
-<a href="https://developer.forecast.io/">forecast.io</a>
-user gmail, 6j,apikey: d374f89e74e135b440e7f786ca5fd857
-### refs
-http://stackoverflow.com/questions/8515872/simple-api-calls-with-node-js-and-express
-
-http://stackoverflow.com/questions/5643321/how-to-make-remote-rest-call-inside-node-js-any-curl
-
 
 #module/regtokau
 
